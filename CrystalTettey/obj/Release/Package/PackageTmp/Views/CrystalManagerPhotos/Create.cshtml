@@ -1,0 +1,65 @@
+﻿@model CrystalTettey.Models.PhotoGallery
+
+@{
+    ViewBag.Title = "Create Photo";
+}
+
+<h2><strong>@ViewBag.Title</strong></h2>
+
+<html>
+
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            @*<legend>PhotoGallery</legend>*@
+
+            <div class="editor-label">
+                Photo Name
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.photoName, new { htmlAttributes = new { @class = "form-control input-lg" } })
+                @Html.ValidationMessageFor(model => model.photoName, "", new { @class = "text-danger mark" })
+            </div>
+
+            <div class="editor-label">
+                Description
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.photoDescription, new { htmlAttributes = new { @class = "form-control input-lg" } })
+                @Html.ValidationMessageFor(model => model.photoDescription, "", new { @class = "text-danger mark" })
+            </div>
+
+            <div class="editor-label">
+                Alternate Name
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.photoAltName, new { htmlAttributes = new { @class = "form-control input-lg" } })
+                @Html.ValidationMessageFor(model => model.photoAltName, "", new { @class = "text-danger mark" })
+            </div>
+
+            <div class="editor-label">
+                Photo Link Address
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.photoLink, new { htmlAttributes = new { @class = "form-control input-lg" } })
+                @Html.ValidationMessageFor(model => model.photoLink, "", new { @class = "text-danger mark" })
+            </div>
+
+            <p>
+                <input type="submit" value="Create" class=" btn btn-success" />
+            </p>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index","","btn btn-danger")
+    </div>
+</body>
+    </html>
+
+   

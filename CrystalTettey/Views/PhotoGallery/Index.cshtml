@@ -1,0 +1,42 @@
+﻿@model PagedList.IPagedList<CTBusinessLayer.PhotoGallery>
+@using CrystalTettey.Models;
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Crystal's Photo Gallery";
+}
+
+<h2><strong>@ViewBag.Title</strong></h2>
+
+<html>
+
+<body>
+
+    <div class="container">
+        <div class="row>">
+            <div class=" form">
+                <div class="polaroid">
+                    @foreach (CTBusinessLayer.PhotoGallery ctItem in @Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-body" style="background-color: #5B2C6F; ">
+            <a href="@Url.Content(ctItem.photoLink)" class="thumbnail" style="background-color: #5B2C6F; ">
+                <p><font color="yellow">@ctItem.photoDescription</font></p>
+                <img alt="@ctItem.photoAltName" src="@Url.Content(ctItem.photoLink)" class="img-responsive img-thumbnail" />
+            </a>
+        </div>
+    </div>
+}
+                </div>
+            </div>
+        </div>
+    </div>
+<br />
+    <br />
+        <p>
+            <a @Html.ActionLink("Back", "Index", "Home", "", new { @class = "btn btn-danger" })</a>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<CTBusinessLayer.RelatedLinks>
+@foreach (var genre in Model)
+{
+    <li>
+        <a href="@Url.Content(genre.linkAddress)">
+            <p>
+                @genre.linkName <br />
+                <font size="1"><span> @genre.linkDescription</span></font>
+        </p>
+        </a>
+    </li>
+}
+

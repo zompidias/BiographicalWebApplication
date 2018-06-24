@@ -1,0 +1,83 @@
+﻿@*@model IEnumerable<CTBusinessLayer.RelatedLinks>*@
+
+
+@model PagedList.IPagedList<CTBusinessLayer.RelatedLinks>
+@using CrystalTettey.Models;
+@using PagedList;
+@using PagedList.Mvc;
+
+
+@helper Truncate(string
+input, int length)
+{
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+@{
+    ViewBag.Title = "Related Links";
+}
+
+<h2><strong>@ViewBag.Title</strong></h2>
+
+<p>
+    <a class="btn btn-success" @Html.ActionLink("Create New Related Link", "Create")</a>
+</p>
+
+<table class="table table-striped">
+    <tr class="info">
+        <th>
+            Link Name
+        </th>
+        <th>
+            Description
+        </th>
+        @*<th>
+                Web Address
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        using (Html.BeginForm("Delete", "CrystalManagerRelatedLinks", new { id = item.linkId }))
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.linkName)
+                </td>
+                <td>
+                    @*@Truncate(item.linkDescription, 25)*@
+                    @Html.DisplayFor(modelItem => item.linkDescription)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.linkAddress)
+                    </td>*@
+                <td>  </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.linkId }) |
+                    <input type="submit" value="Delete" class="btn btn-warning"
+                           onclick="return confirm('Are you sure you want to Delete Item = @item.linkName')">
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<div class="container col-sm-offset-4">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    <ul class="pagination">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </ul>
+</div>
+
+<div class="col-lg-6 col-lg-offset-2" id="hButton1">
+    <a class="btn btn-danger" @Html.ActionLink("Back to Manager Menu", "Index", "CrystalManager")</a>
+</div>

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Choose A Section To Work On";
+}
+
+<h2><strong>@ViewBag.Title</strong></h2>
+
+<html>
+<body>
+    <div class=" panel panel-default">
+        <div class="panel-body">
+            <ul id="hmenu">
+                <li>@Html.ActionLink("Photos", "Index", "CrystalManagerPhotos")</li>
+                <li>@Html.ActionLink("Related Links", "Index", "CrystalManagerRelatedLinks")</li>
+            </ul>
+        </div>
+    </div>
+            <div class="col-lg-6 col-lg-offset-2" id="hButton1">
+                <a class="btn btn-danger" @Html.ActionLink("Back to Home", "Index", "Home")</a>
+            </div>
+</body>
+</html>

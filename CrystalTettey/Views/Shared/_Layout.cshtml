@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>@ViewBag.Title</title>
+
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/scripts/jquery-1.9.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <script src="Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+        <link href="~/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    
+    
+    @*<script src="bootstrap/js/bootstrap.min.js"></script>*@
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script type='text/javascript' src='js/bootstrap.js'></script>
+
+    <script src="Scripts/Plugins/jquery-corners.js" type="text/javascript"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="MainBackground.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Amatic+SC:700|Delius+Unicase:700|Gloria+Hallelujah|Indie+Flower|Josefin+Sans|Libre+Franklin|Lora:700i|Montserrat|Roboto+Slab|Shadows+Into+Light|Taviraj:700|Trirong" rel="stylesheet">        
+    
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">      
+    <style>
+         /*body {
+             background-color: rgba(245,176,65, 0.8) !important;*/
+            /*#fad7a0; f5b041#*/ 
+            /*background: url('˜/Content/BImages/bkgrd1.png') !important;*/
+        /*}*/
+        /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    </style>
+    
+    </head>
+<body>
+
+    <div class="container">
+        <div class=" row">
+            <div class="header">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed"  data-target="#MainNavbar" data-toggle="collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse" id="MainNavbar">
+                            <ul class=" nav navbar-nav nav-pills right" style="font-size: large !Important; font: bold !Important;">
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")">@Html.ActionLink("Home", "Index", "Home")</li>  @*, "", new { @class = "glyphicon glyphicon-home" }*@
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Photos" ? "active" : "")">@Html.ActionLink("Photos", "Index", "PhotoGallery")</li>  @*, "", new { @class = "glyphicon glyphicon-picture" }*@
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "About" ? "active" : "")">@Html.ActionLink("About", "Index", "About")</li> @*, "", new { @class = "glyphicon glyphicon-info-sign" }*@
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "ContactUs" ? "active" : "")">@Html.ActionLink("ContactUs", "Create", "ContactUs")</li>  @*, "", new { @class = "glyphicon glyphicon-earphone" }*@
+                            </ul>
+                    </div>
+                </nav>
+                @*<div class="navbar navbar-inverse navbar-fixed-top" id="myNavbar">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                @*<ul class=" nav navbar-nav nav-pills right">
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")">@Html.ActionLink("Home", "Index", "Home")</li>  @*, "", new { @class = "glyphicon glyphicon-home" }
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Photos" ? "active" : "")">@Html.ActionLink("Photos", "Index", "PhotoGallery")</li>  @*, "", new { @class = "glyphicon glyphicon-picture" }
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "About" ? "active" : "")">@Html.ActionLink("About", "Index", "About")</li> @*, "", new { @class = "glyphicon glyphicon-info-sign" }
+                    <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "ContactUs" ? "active" : "")">@Html.ActionLink("ContactUs", "Create", "ContactUs")</li>  @*, "", new { @class = "glyphicon glyphicon-earphone" }
+                </ul>*@
+            </div>
+        </div>
+        <div class="row">
+            <div class="stats visible-lg visible-md hidden-xs hidden-sm col-lg-2 col-md-2" id="stats">
+                <div class="panel  panel-danger stats" id="stats" style="max-width: 570px; text-align: left !Important; margin-left: 0px !Important; padding-left: 0 !Important; padding-right: 0 !Important; border-left: 0px !Important; ">
+                    <div class="panel-heading" id="stats" style="max-width: 570px; text-align: left !Important; margin-left: 0px !Important; padding-left: 0 !Important; padding-right: 0 !Important; border-left: 0px !Important; ">
+                        <h3>Related Links</h3>
+                    </div>
+                    <div class="panel-body stats" id="stats" style="max-width: 570px; text-align: left !Important; margin-left: 0px !Important; padding-left: 0 !Important; padding-right: 0 !Important; border-left: 0px !Important; ">
+                        @*style="text-align: left; background: transparent url('/CrystalTettey/Content/BImages/outoffocus.png') repeat;">*@
+                        <ul id=" hmenu" style="list-style-type: none; font-size: large !Important;  ">
+                            @*font-family: 'Abril Fatface', cursive !Important; font: 'Abril Fatface', cursive !Important;*@
+                        @{Html.RenderAction("RelatedLinkList", "Home");}
+                    </ul>
+                </div>
+            </div>
+            </div>
+            @*<div class="row">*@
+            @*style="background: transparent url('~/Content/BImages/bkgrd1.png') repeat;">*@
+
+
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+
+            <div class="row" id="myTopRow">
+                <div class="hidden-lg hidden-md visible-xs visible-sm col-lg-2 col-md-2">
+                    <div class="panel  panel-danger">
+                        <div class="panel-heading">
+                            <h3>Related Links</h3>
+                        </div>
+                        <div class="panel-body"> @*style="background: transparent url('/CrystalTettey/Content/BImages/outoffocus.png') repeat;">*@
+                            <ul id="hmenu" style="list-style-type: none; font-size: large !Important; font: bold !Important;">
+                                @{Html.RenderAction("RelatedLinkList", "Home");}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    @*<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script type='text/javascript' src='js/bootstrap.js'></script>*@
+
+   
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

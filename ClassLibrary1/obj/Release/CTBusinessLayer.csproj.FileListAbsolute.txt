@@ -1,0 +1,4 @@
+C:\Users\j komo\Documents\BusinessProjects\CrystalTettey\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\j komo\Documents\BusinessProjects\CrystalTettey\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\j komo\Documents\BusinessProjects\CrystalTettey\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\j komo\Documents\BusinessProjects\CrystalTettey\ClassLibrary1\obj\Release\ClassLibrary1.pdb
